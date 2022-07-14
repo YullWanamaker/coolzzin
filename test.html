@@ -1,86 +1,164 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>쥐덫 평가</title>
+    <title>쥐덫 기여도 테스트</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <a href="index.html">쥐덫 평가</a>
-    </header>
-    <section class="section1">
-      <article>
-        <h2>성실성</h2>
-        <p>당신은 쥐덫을 매일 절반이상 체크하시고 계십니까?</p>
-        <input type="radio" name="q1" class="yes-button"<span>yes</span>
-        <input type="radio" name="q1" class="no-button"<span>no</span>
-        <input type="radio" name="q1" class="maybe-button"<span>maybe</span>
-
-      </article>
-      <article>
-        <h2>소통성</h2>
-        <p>당신은 쥐덫 회원들과 소통을 즐겨하십니까?</p>
-        <input type="radio" name="q2" class="yes-button"<span>yes</span>
-        <input type="radio" name="q2" class="no-button"<span>no</span>
-        <input type="radio" name="q2" class="maybe-button"<span>maybe</span>
-      </article>
-
-   </section>
-      <footer>
-        <a onclick="result();">결과보기</a>
+    <div id="wrapper">
+      <!-- 상단 제목의 높이 낮게 하기 위해 small 클래스를 추가 -->
+      <header class="intro small">
+        <header>
+          <!-- 첫 페이지로 돌아갈 수 있는 하이퍼링크 추가 -->
+          <h2><a href="index.html">쥐덫 기여도 테스트</a></h2>
+        </header>
+      </header>
+      <!-- section에 질문들을 추가 -->
+      <section id="contents">
+        <!-- section 안에 여러 개의 내용들이 들어갈때는 article로 구분 -->
+        <article>
+          <div>
+            <!-- b 태그는 글씨를 진하게 함 -->
+            <h2>성실성</h2>
+            <p>당신은 쥐덫을 매일 절반이상 체크하시고 계십니까?</p>
+          </div>
+          <!-- 이런건 에쁜 radio button을 가져다쓰자! -->
+          <!-- https://codepen.io/ohchul/pen/LYyWjRz -->
+          <div>
+            <!-- radio button은 같은 name끼리 묶임 -->
+            <!-- input 부분은 hidden으로 가리고, 실제로는 label 부분을 꾸며서 버튼 모양을 만듬 -->
+            <!-- label의 for의 값이 input의 id와 같아야 함 -->
+            <input
+              class="hidden radio-label yes-button"
+              id="q1-yes-button"
+              type="radio"
+              name="q1"
+            />
+            <label class="button-label" for="q1-yes-button">
+              <h3>Yes</h3>
+            </label>
+            <input
+              class="hidden radio-label no-button"
+              id="q1-no-button"
+              type="radio"
+              name="q1"
+            />
+            <label class="button-label" for="q1-no-button">
+              <h3>No</h3>
+            </label>
+            <input
+              class="hidden radio-label maybe-button"
+              id="q1-maybe-button"
+              type="radio"
+              name="q1"
+            />
+            <label class="button-label" for="q1-maybe-button">
+              <h3>Maybe</h3>
+            </label>
+          </div>
+        </article>
+        <!-- 위 article을 복사해서 문제를 추가해보자 -->
+        <article>
+          <div>
+            <h2>소통성</h2>
+            <p>당신은 쥐덫 회원들과 소통을 즐겨하십니까?</p>
+          </div>
+          <!-- 한 radio button 그룹의 name은 유일해야하므로 q2로 바꿔줘야 함 -->
+          <div>
+            <input
+              class="hidden radio-label yes-button"
+              id="q2-yes-button"
+              type="radio"
+              name="q2"
+            />
+            <label class="button-label" for="q2-yes-button">
+              <h3>Yes</h3>
+            </label>
+            <input
+              class="hidden radio-label no-button"
+              id="q2-no-button"
+              type="radio"
+              name="q2"
+            />
+            <label class="button-label" for="q2-no-button">
+              <h3>No</h3>
+            </label>
+            <input
+              class="hidden radio-label maybe-button"
+              id="q2-maybe-button"
+              type="radio"
+              name="q2"
+            />
+            <label class="button-label" for="q2-maybe-button">
+              <h3>Maybe</h3>
+            </label>
+          </div>
+        </article>
+      </section>
+      <!-- 결과를 보는 페이지로 갈 수 있는 버튼을 만들자 -->
+      <footer class="bottom">
+        <!-- 카카오 애드핏 광고 -->
+        <ins
+          class="kakao_ad_area"
+          style="display: none"
+          data-ad-unit="DAN-eqegmsEzMOQZfd2n"
+          data-ad-width="320"
+          data-ad-height="50"
+        ></ins>
+        <script
+          type="text/javascript"
+          src="//t1.daumcdn.net/kas/static/ba.min.js"
+          async
+        ></script>
+        <!-- 이 하이퍼링크를 클릭했을 때 javascript 함수를 호출하기 -->
+        <a onclick="result();" class="button-label blue"><h3>결과보기</h3></a>
       </footer>
-      <script>
-        function result() {
-           let yes_count =0;
-           let no_count =0;
-
-           let elements = document.getElementsByClassName('yes-button');
-           for (let i = 0; i < elements.length; i++) {
-            if(elements[i].checked) {
-              yes_count++;
-            }
-            
-           }
-
-           elements = document.getElementsByClassName('no-button');
-           for (let i = 0; i < elements.length; i++) {
-            if(elements[i].checked) {
-              no_count++;
-            }
-            
-           }
-
-           elements = document.getElementsByClassName('maybe-button');
-           for (let i = 0; i < elements.length; i++) {
-            if(elements[i].checked) {
-              no_count++;
-            }  
-           }
-
-          if(yes_count+ no_count !=2){
-            alert('쥐덫도 성실히 안하는데 이거라도 성실히 체크해봐라 좀');
-            return
-          } 
-
-           if(yes_count == 2) {
-              location.href="result_3.html"
-           } else if(yes_count == 1) {
-              location.href="result_2.html"
-           } else {
-            location.href="result_1.html"
-
-           }
-
-          
-
-          
-        
-            
-          }
-      </script>
-
+    </div>
   </body>
+
+  <!-- javascript는 script 태그로 감싸준다 -->
+  <script>
+    function result() {
+      let yes_count = 0;
+      let no_count = 0;
+
+      let elements = document.getElementsByClassName("yes-button");
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i].checked) {
+          yes_count++;
+        }
+      }
+
+      elements = document.getElementsByClassName("no-button");
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i].checked) {
+          no_count++;
+        }
+      }
+
+      elements = document.getElementsByClassName("maybe-button");
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i].checked) {
+          no_count++;
+        }
+      }
+
+      if (yes_count + no_count != 2) {
+        alert("쥐덫도 성실히 안하는데 이거라도 성실히 체크해봐라 좀");
+        return;
+      }
+
+      if (yes_count == 2) {
+        location.href = "result_3.html";
+      } else if (yes_count == 1) {
+        location.href = "result_2.html";
+      } else {
+        location.href = "result_1.html";
+      }
+    }
+  </script>
 </html>
