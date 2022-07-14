@@ -1,33 +1,65 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>쥐덫 평가</title>
+    <title>쥐덫 기여도 평가</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <a href="index.html"> 쥐덫 평가 </a>
-    </header>
-    <section>
-      <img src="gee.jpeg" alt="당신의 모습" />
-      <h2>당신은 쥐덫에 콱물려따</h2>
-      <p>열심히 하지 않아서 뜨끔 하신가요?.</p>
-      <p>당신은 회장의 관심과 사랑이 필요로 하는 회원입니다.</p>
-      <p>이걸 본 오늘만이라도 성실하게 쥐덫해보세요. (ㅅㅇ님)</p>
+    <div id="wrapper">
+      <header class="intro small">
+        <header>
+          <h2><a href="index.html">쥐덫 기여도 평가</a></h2>
+        </header>
+      </header>
+      <section id="contents">
+        <header>
+          <!-- 결과에 따라 이미지를 넣어주는 곳을 하나 만들자. 각 이미지의 크기는 다르더라도 비율은 통일하는 것이 좋다 -->
+          <img src="gee.jpeg" />
+        </header>
+        <!-- 결과에 대한 제목과 내용을 작성해줌 -->
+        <section>
+          <h2><strong>당신은 쥐덫에 콱 물려따</strong></h2>
 
-      <a href="index.html">처음으로 </a>
-    </section>
-    <footer>
-      <!-- Go to www.addthis.com/dashboard to customize your tools -->
-      <div class="addthis_inline_share_toolbox_qw74"></div>
-      <!-- Go to www.addthis.com/dashboard to customize your tools -->
-      <script
-        type="text/javascript"
-        src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62ce74cf0b3832fc"
-      ></script>
-    </footer>
+          <h2>당신은 쥐덫에 콱물려따</h2>
+          <p>열심히 하지 않아서 뜨끔 하신가요?.</p>
+          <p>당신은 회장의 관심과 사랑이 필요로 하는 회원입니다.</p>
+          <p>이걸 본 오늘만이라도 성실하게 쥐덫해보세요. (ㅅㅇ님)</p>
+        </section>
+        <!-- 처음으로 돌아갈 수 있는 버튼을 추가해주자 -->
+        <footer>
+          <a href="index.html" class="button-label"><h3>처음으로</h3></a>
+        </footer>
+      </section>
+
+      <footer class="bottom">
+        <!-- 카카오 애드핏 광고 -->
+        <ins
+          class="kakao_ad_area"
+          style="display: none"
+          data-ad-unit="DAN-eqegmsEzMOQZfd2n"
+          data-ad-width="320"
+          data-ad-height="50"
+        ></ins>
+        <script
+          type="text/javascript"
+          src="//t1.daumcdn.net/kas/static/ba.min.js"
+          async
+        ></script>
+        <!-- 공유하기 버튼이 들어갈 자리를 만들어놓자 -->
+        <div>다른 회원님들도 알아보자.</div>
+        <div class="addthis_inline_share_toolbox"></div>
+        <div class="copyright">조유리가 만듦</div>
+      </footer>
+    </div>
+    <!-- addthis를 위한 javascript 파일 링크 -->
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60ee73a6845cb0f2"
+    ></script>
   </body>
 </html>
